@@ -1,0 +1,77 @@
+.example-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-7);
+  box-shadow: var(--shadow-md);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.example-card__badge {
+  margin-bottom: var(--space-4);
+}
+
+.example-card__title {
+  font-size: 1.6rem;
+  color: var(--clr-heading);
+  margin-bottom: var(--space-5);
+}
+
+.example-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+}
+
+.example-section__label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--clr-primary);
+  margin-bottom: var(--space-2);
+}
+
+.example-section__text {
+  font-size: 0.9rem;
+  color: var(--clr-body-muted);
+  line-height: 1.6;
+}
+
+.example-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.example-list li {
+  font-size: 0.9rem;
+  color: var(--clr-body-muted);
+  padding-left: var(--space-3);
+  position: relative;
+}
+.example-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--clr-primary);
+  font-weight: 600;
+}
+
+.example-prompt {
+  background: var(--clr-bg-alt);
+  border: 1px solid var(--clr-border-med);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  font-size: 0.85rem;
+  color: var(--clr-heading);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .example-grid { grid-template-columns: 1fr; }
+  .example-card { padding: var(--space-5); }
+}

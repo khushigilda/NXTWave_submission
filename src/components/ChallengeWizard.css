@@ -1,0 +1,213 @@
+.wizard {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.wizard__welcome {
+  text-align: center;
+  padding: var(--space-8) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.wizard__welcome h1 { margin-bottom: 0; }
+
+.wizard__welcome-text {
+  color: var(--clr-body-muted);
+  font-size: 1.05rem;
+  max-width: 500px;
+  line-height: 1.7;
+}
+
+/* ── Header ── */
+.wizard__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.wizard__step-label {
+  font-size: 0.85rem;
+  color: var(--clr-body-muted);
+  font-weight: 500;
+}
+
+.wizard__header-actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+/* ── Progress dots ── */
+.progress-dots {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.progress-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--clr-border-med);
+  transition: all var(--transition-med);
+}
+
+.progress-dot--done { background: var(--clr-primary); }
+.progress-dot--current { width: 24px; border-radius: 5px; background: var(--clr-primary); }
+
+.progress-dots__label {
+  font-size: 0.78rem;
+  color: var(--clr-body-muted);
+  margin-left: var(--space-1);
+  font-weight: 600;
+}
+
+/* ── Body ── */
+.wizard__body {
+  padding: var(--space-6);
+}
+
+.wizard__question {
+  font-size: 1.4rem;
+  color: var(--clr-heading);
+}
+
+/* ── Category buttons ── */
+.wizard__categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.category-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--clr-surface);
+  border: 1.5px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--transition-med);
+  font-family: var(--font-body);
+}
+
+.category-btn:hover {
+  border-color: var(--clr-primary);
+  background: var(--clr-primary-light);
+}
+
+.category-btn--selected {
+  border-color: var(--clr-primary);
+  background: var(--clr-primary-light);
+  box-shadow: 0 0 0 3px rgba(192,57,43,0.12);
+}
+
+.category-btn__icon { font-size: 1.5rem; }
+
+.category-btn__label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--clr-body);
+  line-height: 1.4;
+}
+
+/* ── Problem summary ── */
+.wizard__problem-summary {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--clr-primary-light);
+  border: 1px solid var(--clr-border-med);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.wizard__problem-label {
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--clr-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.wizard__problem-text {
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--clr-body);
+  line-height: 1.5;
+}
+
+/* ── Fields ── */
+.wizard__fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* ── Footer ── */
+.wizard__footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--clr-border);
+}
+
+/* ── Post-blueprint ── */
+.wizard__post-blueprint {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* ── Confirm overlay ── */
+.wizard__confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: var(--space-5);
+}
+
+.wizard__confirm-card {
+  max-width: 440px;
+  width: 100%;
+}
+
+/* ── Loading spinner ── */
+.spin {
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .wizard__categories { grid-template-columns: repeat(2, 1fr); }
+  .wizard { padding: var(--space-4); }
+  .wizard__body { padding: var(--space-4); }
+  .wizard__footer { flex-direction: column-reverse; }
+  .wizard__footer .btn { width: 100%; justify-content: center; }
+}
